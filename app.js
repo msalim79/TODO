@@ -1,10 +1,14 @@
-//selectors
+//selectors DOM
 const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list')
+const filterOption = document.querySelector('.filter-todo');
 
 //event listerners
+document.addEventListener('DOMContentLoaded, getTodos');
 todoButton.addEventListener('click', addTodo);
+todoList.addEventListener('click', deleteTodo);
+filterOption.addEventListener('click', filterTodo);
 
 
 //functions
@@ -29,7 +33,7 @@ function addTodo(event){
     //check trash button
     const trashButton = document.createElement('button');
     trashButton.innerHTML = '<i class="fas fa-trash"></i>';
-    trashButton.classList.add("complete-btn");
+    trashButton.classList.add("trash-btn");
     todoDiv.appendChild(trashButton);
     //append to list
     todoList.appendChild(todoDiv);
