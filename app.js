@@ -14,18 +14,19 @@ filterOption.addEventListener('click', filterTodo);
 //functions
 
 function addTodo(event){
-    //prevent form form submitting
+    //prevent form from submitting
     event.preventDefault();
-    console.log("hello");
+   
     //todo div
     const todoDiv = document.createElement("div");
     todoDiv.classList.add("todo")
     //create li
     const newTodo = document.createElement('li');
-    newTodo.innerText = 'hey';
+    newTodo.innerText = todoInput.value;
     newTodo.classList.add('todo-item');
     todoDiv.appendChild(newTodo);
-    //check mark button
+    todoInput.value = "";
+    //check completed button
     const completedButton = document.createElement('button');
     completedButton.innerHTML = '<i class="fas fa-check"></i>';
     completedButton.classList.add("complete-btn");
